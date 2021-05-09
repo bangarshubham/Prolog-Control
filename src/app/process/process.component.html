@@ -1,0 +1,52 @@
+
+   <div style="margin-top: 100px">
+    <div style="float:right">
+    <li> 
+    <a class="btn btn-success" routerLink='/logout'>Log Out</a>
+    </li>
+    </div>
+    <!-- <label class="logoutLblPos">
+      <a class="btn btn-danger" routerLink='/logout' *ngIf="!user">Log Out</a>
+      </label> -->
+      
+  <form class="form-inline">
+      <input class="form-control" name="searchInput" placeholder="Search Process into Prolog" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
+      <button class="btn btn-outline-primary" (click)="searchText=''">Clear</button>
+    
+
+<table _ngcontent-sc46="" class="table table-stripes mat-table" mat-table="" role="grid">
+    <thead>
+      <th>CPU Percent</th>
+      <th>Process Name</th>
+      <th>Process id</th>
+      <th>Username</th>
+      <th>VMS</th>
+      <th>Actions</th>
+    </thead>
+    <ng-container *ngFor="let proc of processArray;index as i">
+        <tr class="table table-striped" *ngIf="filterCondition(proc)">
+          <td>{{proc.cpu_percent}}</td>
+          <td>{{proc.name}}</td>
+            <td>{{proc.pid}}</td>
+            <td>{{proc.username}}</td>
+            <td>{{proc.vms}}</td>
+            <td>
+           
+              <button class="btn btn-outline-danger" (click)="onDelete(proc.$key)">Kill Process</button>
+              <!-- <button class="btn btn-outline-primary" (click)="onStop(proc.$key)">Stop Process</button>
+              <button class="btn btn-outline-success" (click)="onPause(proc.$key)">Pause Process</button> -->
+            </td>
+            <td>
+               <div  class="spinner-border text-primary" *ngIf="spinnerFlag[i]" ></div>
+            </td>
+        </tr>
+      </ng-container>
+    </table>
+    <div class="alert alert-danger" *ngIf="showDeletedMessage">
+      Prcess Killed successfully.
+    </div>
+    </form>
+
+  </div>
+
+   

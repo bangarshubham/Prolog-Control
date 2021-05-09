@@ -1,0 +1,97 @@
+<section id="login" class="projects-section ">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <form [formGroup]="testForm" (ngSubmit)="login(loginForm)">
+
+
+
+          <div class="card bg-light mb-3" style="width: 40rem;">
+            <img src="../../../assets/img/1.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5>Enter IP Address :</h5>
+              <input (input)="tcode=$event.target.value" type="text" formControlName="ip" class="form-control">
+              {{testForm.status}}
+            </div>
+            <div class="col-8 mt-4">
+              <button class="btn btn-primary" (click)="login()">Login</button>
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="invalid-feedback" *ngIf="submitted && formControls.email.errors">
+    Invalid email address.</div>
+  
+     <div class="row" *ngIf="authError">
+                              <div class="col-8 alert alert-danger">{{ authError?.message }}</div>
+                            </div>
+                       -->
+<!--                             
+                            <div class="row">
+                              <div class="col-6"> -->
+
+<!--<button class="btn btn-primary" (click)="login()" routerLink="/process">Login</button>-->
